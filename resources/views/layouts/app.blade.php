@@ -30,8 +30,10 @@
                         <a class="nav-link" href='/about'>About</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" action="/searchPost" method="post">
+                    @csrf
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search"
+                        name="search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

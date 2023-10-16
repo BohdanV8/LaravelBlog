@@ -99,4 +99,10 @@ class MainController extends Controller
             return 'Такий користувач уже існує';
         }
     }
+    public function searchPost(Request $request)
+    {
+        $searchTitle = $request->input('search');
+        $blogs = newPost::where('title', $searchTitle)->get();
+        return view('otherPosts', ['posts' => $blogs]);
+    }
 }
